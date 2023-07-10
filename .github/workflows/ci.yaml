@@ -9,10 +9,6 @@ on:
         options:
         - 'chrome'
         - 'firefox'
-
-env:
-  TEST: ${{ site.github.url }}
-
 jobs:
   nightwatch:
     name: Nightwatch
