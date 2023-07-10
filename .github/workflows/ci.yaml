@@ -1,0 +1,26 @@
+name: Test
+
+on:
+  workflow_dispatch:
+    inputs:
+      browser:
+        type: choice
+        description: 'Browser'
+        options:
+        - 'chrome'
+        - 'firefox'
+
+env:
+  TEST: ${{ site.github.url }}
+
+jobs:
+  nightwatch:
+    name: Nightwatch
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+
+    steps:
+    - uses: actions/checkout@master
+    - name: Run Nightwatch on ${{ site.github.url }}
+      run: |
+        ls
