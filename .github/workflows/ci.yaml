@@ -21,6 +21,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@master
-    - name: Run Nightwatch on ${{ site.github.url }}
+    - name: Test
       run: |
         ls
+    - name: Dump GitHub context
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: |
+        echo "$GITHUB_CONTEXT"
