@@ -25,3 +25,4 @@ jobs:
         GITHUB_CONTEXT: ${{ toJson(github) }}
       run: |
         echo "$GITHUB_CONTEXT"
+        echo "https://${{ github.repository_owner}}.github.io/${{ name }}"
